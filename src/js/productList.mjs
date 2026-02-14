@@ -24,13 +24,8 @@ export default class ProductList {
     // Get the list of products
     const list = await this.dataSource.getData(this.category);
 
-    // Filter by category if specified
-    const filteredList = this.category
-      ? list.filter(product => product.Category === this.category)
-      : list;
-
     // Render the list
-    this.renderList(filteredList);
+    this.renderList(list);
   }
 
   renderList(list) {

@@ -90,7 +90,7 @@ p {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
@@ -260,4 +260,29 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
+}
+
+/* Category Grid Styles */
+.product-categories .categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+
+.category-card {
+  text-align: center;
+  margin: 10px;
+}
+
+.category-card a {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+
+.category-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 }

@@ -45,13 +45,13 @@ export function renderWithTemplate(
   if (clear) {
     parentElement.innerHTML = '';
   }
-  
+
   // Generate HTML string from the template function with data
   const htmlString = templateFn(data);
-  
+
   // Insert into the DOM
   parentElement.insertAdjacentHTML(position, htmlString);
-  
+
   // Execute callback if provided
   if (callback) {
     callback(data);
@@ -67,16 +67,16 @@ export function renderListWithTemplate(
   list,
   position = 'afterbegin',
   clear = false
-){
+) {
 
-// Clear the element if specified
+  // Clear the element if specified
   if (clear) {
     parentElement.innerHTML = '';
   }
-  
+
   // Generate HTML strings from the list
   const htmlStrings = list.map(templateFn);
-  
+
   // Insert into the DOM
   parentElement.insertAdjacentHTML(position, htmlStrings.join(''));
 }
@@ -95,23 +95,25 @@ export async function loadTemplate(path) {
 
 export async function loadHeaderFooter() {
   try {
-  // Load the header and footer templates
-  const headerTemplate = await loadTemplate('/partials/header.html');
-  const footerTemplate = await loadTemplate('/partials/footer.html');
+    // Load the header and footer templates
+    const headerTemplate = await loadTemplate('/partials/header.html');
+    const footerTemplate = await loadTemplate('/partials/footer.html');
 
-      
+    const headerElement = document.querySelector('header');
+    const footerElement = document.querySelector('footer');
+
     // Render the header and footer
-    renderWithTemplate(headerTemplate, headerElement);
-    renderWithTemplate(footerTemplate, footerElement);
-    
-    // If you have cart icon functionality, add callback here
-    // renderWithTemplate(headerTemplate, headerElement, null, updateCartIcon);
-    
-    console.log('Header and footer loaded successfully');
+    if (headerElement) {
+      headerElement.innerHTML = headerTemplate;
+    }
+    if (footerElement) {
+      footerElement.innerHTML = footerTemplate;
+    }
+
+    // console.log('Header and footer loaded successfully');
   } catch (error) {
     console.error('Error loading header/footer:', error);
   }
 }
 
 // Keep other existing expor
-    
