@@ -1,10 +1,10 @@
 // main.js
-import ProductData from './ProductData.mjs';
-import ProductList from './ProductList.mjs';
+
 import { loadHeaderFooter } from './utils.mjs';
 
 
 // Wait for DOM to be fully loaded
+/*
 document.addEventListener('DOMContentLoaded', async () => {
   // Get the product list container
   const productListElement = document.querySelector('.product-list');
@@ -23,5 +23,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   console.log('Product list loaded successfully');
 });
+*/
 
 loadHeaderFooter();
