@@ -1,7 +1,6 @@
-// src/public/js/product-listing.js
-import ProductData from './ProductData.mjs';
-import ProductList from './ProductList.mjs';
-import { loadHeaderFooter, getParam } from './utils.mjs';
+import ExternalServices from '../js/ExternalServices.mjs';
+import ProductList from '../js/ProductList.mjs';
+import { loadHeaderFooter, getParam } from '../js/utils.mjs';
 
 // Load header and footer
 loadHeaderFooter();
@@ -22,7 +21,7 @@ if (category) {
 }
 
 // Initialize product listing
-const dataSource = new ProductData();
+const dataSource = new ExternalServices();
 const listElement = document.querySelector('.product-list');
 const myList = new ProductList(category, dataSource, listElement);
 myList.init();

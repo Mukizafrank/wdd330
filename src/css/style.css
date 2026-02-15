@@ -286,3 +286,48 @@ footer {
   height: 100px;
   object-fit: contain;
 }
+
+.hide {
+  display: none;
+}
+
+/* Checkout Form Styles */
+#checkout-form fieldset {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid var(--light-grey);
+}
+
+.checkout-form__item {
+  margin-bottom: 10px;
+}
+
+.checkout-form__item label {
+  display: block;
+}
+
+.checkout-form__item input {
+  width: 100%;
+  padding: 5px;
+}
+
+#checkout-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+#checkout-summary li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.cart-footer {
+  margin-top: 1em;
+  padding: 1em;
+  border-top: 1px solid var(--light-grey);
+}
+
+.cart-total {
+  font-weight: bold;
+}

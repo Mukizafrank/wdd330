@@ -116,4 +116,14 @@ export async function loadHeaderFooter() {
   }
 }
 
-// Keep other existing expor
+// formDataToJSON function
+export function formDataToJSON(formElement) {
+  const formData = new FormData(formElement),
+    convertedJSON = {};
+
+  formData.forEach(function (value, key) {
+    convertedJSON[key] = value;
+  });
+
+  return convertedJSON;
+}

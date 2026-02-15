@@ -32,7 +32,7 @@ export default class ShoppingCart {
       this.parent.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
     } else {
       renderListWithTemplate(cartItemTemplate, this.parent, cartItems, 'afterbegin', true);
-      
+
       // Calculate and display total
       const total = cartItems.reduce((sum, item) => sum + item.FinalPrice, 0);
       this.displayCartTotal(total);
@@ -41,8 +41,18 @@ export default class ShoppingCart {
 
   displayCartTotal(total) {
     const totalElement = document.querySelector('.cart-total');
-    if (totalElement) {
-      totalElement.innerHTML = `Total: $${total.toFixed(2)}`;
+    const cartFooter = document.querySelector('.cart-footer');
+    if (total > 0) {
+      if (totalElement) {
+        totalElement.innerHTML = `Total: $${total.toFixed(2)}`;
+      }
+      if (cartFooter) {
+        cartFooter.classList.remove('hide');
+      }
+    } else {
+      if (cartFooter) {
+        cartFooter.classList.add('hide');
+      }
     }
   }
 }
